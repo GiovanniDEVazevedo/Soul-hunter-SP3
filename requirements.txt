@@ -1,0 +1,8 @@
+Flask
+Flask-CORS
+oracledb
+python-dotenv
+gunicorn
+pytest
+psycopg[binary]
+SQLAlchemy

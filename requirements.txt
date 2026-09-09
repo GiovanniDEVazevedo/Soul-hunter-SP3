@@ -1,8 +1,6 @@
-Flask
-Flask-CORS
-oracledb
-python-dotenv
-gunicorn
-pytest
-psycopg[binary]
-SQLAlchemy
+Flask>=3.0
+Flask-CORS>=4.0
+python-dotenv>=1.0
+psycopg[binary]>=3.2
+gunicorn>=21.0
+pytest>=8.0

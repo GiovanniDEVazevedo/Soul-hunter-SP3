@@ -1,16 +1,13 @@
 import os
+
 import psycopg
 from dotenv import load_dotenv
 
-# Carrega as variáveis do arquivo .env
 load_dotenv()
 
 
 def get_connection():
-    """
-    Cria e retorna uma conexão com o banco PostgreSQL.
-    """
-
+    """Cria e retorna uma conexão com o banco PostgreSQL."""
     database_url = os.getenv("DATABASE_URL")
 
     if not database_url:

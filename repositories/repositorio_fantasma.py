@@ -26,6 +26,18 @@ def salvar_fantasma(dados):
             cursor.execute(sql, parametros)
             id_fantasma = cursor.fetchone()[0]
     return id_fantasma
+def vincular_fantasma_a_lote(id_fantasma, id_lote):
+    sql = """
+        UPDATE fantasma
+        SET id_lote = %s
+        WHERE id_fantasma = %s;
+    """
+
+    with get_connection() as conexao:
+        with conexao.cursor() as cursor:
+            cursor.execute(sql, (id_lote, id_fantasma))
+
+
 def buscar_fantasma_por_id(id_fantasma):
     sql = """
         SELECT id_fantasma, seed, raridade, corpo, olho, boca, acessorios, aura, efeito

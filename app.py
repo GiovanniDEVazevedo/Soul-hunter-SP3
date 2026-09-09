@@ -1,8 +1,16 @@
 from flask import Flask, jsonify
 from database.connection import get_connection
+from routes.capturas import captura
+from routes.fantasma import fantasma
+from routes.spawn import spawn
+from routes.usuarios import usuario
+
 
 app = Flask(__name__)
-
+app.register_blueprint(captura)
+app.register_blueprint(fantasma)
+app.register_blueprint(spawn)
+app.register_blueprint(usuario)
 
 @app.route("/")
 def home():
